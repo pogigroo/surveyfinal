@@ -1,0 +1,48 @@
+V1: Sample person identification number
+V2: Lead (ug/dL)
+V3: Serum folate (ng/mL)
+V4: Serum cholesterol (mg/dL)
+V5: Serum HDL cholesterol (mg/dL)
+V6: Urinary cadmium (ng/mL)
+V7: Weight (lbs)
+V8: Standing height (in)
+V9: Head circumference (cm)
+V10: Total grams of food & beverage consumed
+V11: Water (gm)
+V12: Food energy (kcal)
+V13: Race-ethnicity
+V14: Sex
+V15: Household size (persons in dwelling)
+V16: Rural/urban code based on USDA code
+V17: Poverty Income Ratio
+V18: Pseudo-PSU for phase 2
+V19: Pseudo-stratum for phase 2
+V20: Phase 2 MEC examined sample final wgt
+V21: Marital status
+V22: # hours SP watched TV yesterday
+V23: Doctor ever told you had: asthma
+V24: Doctor ever told you had: hay fever
+V25: Now taking prescribed medicine for HBP
+V26: Doctor ever told you had: heart attack
+V27: Age in Years
+V28: Indicator of BMI >= 25
+V29: Indicator of BMI >= 30
+V30: Smoked 100+ Cigarettes in life
+V31: Do you smoke cigarettes now
+V32: # cigarettes smoked per day
+V33: Pregnancy indicator
+V34: Have you ever used marijuana
+V35: Indicator of high lead levels
+V36: Education Level: 1 - <HS, 2 - HS and above
+V37: Categorical age
+V38: Area of back pain
+V39: Indicator or Hypertension
+V40: Categorical BMI (1->=30, 2-25-29,3-<25)
+V41: Total Number of Alcoholic Drinks/Month
+V42: Avg. number of Alcoholic Drinks/Day
+V43: Recoded Standing Height (in)
+V44: Recoded RACETHN
+V45: Recoded OVERWT
+V46: Recoded HYPERTEN
+V47: Recoded AGE
+V48: Variable combining SEX and Overwght
