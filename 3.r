@@ -1,38 +1,50 @@
 require(foreign)
 adults <- read.xport("Datasets/adults.xpt")
-summary(adults)
-
-adults$ASTHMA <- abs(adults$ASTHMA-2)
-adults$CIG100 <- abs(adults$CIG100-2)
-
-# head(adults$PSU)
-
-
-adults.dsgn <- svydesign(ids = ~psu,
-strata = ~stratum, nest = true, data = adults, weights = ~examwgt)
+# summary(adults)
 
 require(survey)
 
+adults$ASTHMA <- abs(adults$ASTHMA-2)
+adults$CIG100 <- abs(adults$CIG100-2) #smoked
+adults$HAYFEVER <- abs(adults$HAYFEVER-2)
+# drinks = TOT_ALQ
+# age = AGE
+# head(adults$PSU)
+# race = RACETHN
 
-attach(adults)
-asthma <- V23
-asthma[asthma == 1] <- "yes"
-asthma[asthma == 2] <- "no"
-summary(as.factor(asthma))
-asthma <- as.factor(asthma)
-race <- as.factor(V13)
-hayfever <- as.factor(V24)
-drinks <- V41
-age <- V27
-smoked <- as.factor(V30)
-drinks <- as.double(drinks)
-hayfever[hayfever == "."] <- NA
-hayfever <- as.factor(hayfever)
-lmodel <- glm(smoked ~ asthma + race + hayfever + drinks + age, family = binomial(link = "logit"))
-summary(lmodel)
+adults.dsgn <- svydesign(ids = ~PSU, strata = ~STRATUM, 
+                         data = adults, 
+                         nest=T)
+summary(adults.dsgn) 
+
+rmodel1 <- svyglm(CIG100 ~ ASTHMA + as.factor(RACETHN) + HAYFEVER +TOT_ALQ + AGE, design=adults.dsgn) 
+summary(rmodel1)
+
+adults.JKn <- as.svrepdesign(adults.dsgn, type="JKn")
+# summary(adults.JKn)
+rmodel2 <- svyglm(CIG100 ~ ASTHMA + as.factor(RACETHN) + HAYFEVER +TOT_ALQ + AGE, design=adults.JKn)
+summary(rmodel2) 
+
+
+betas <- summary(rmodel2)$coefficients[,1][-1]
+SE.betas <- summary(rmodel2)$coefficients[,2][-1] 
+CIs <- round(
+	cbind(betas - qt(p = 0.975, df = adults.JKn$degf)*SE.betas, betas, betas + qt(p = 0.975, df = adults.JKn$degf)*SE.betas), 4)
+dimnames(CIs)[[2]] <- c("Lower", "Beta", "Upper") # Odds ratios and CIs
+round(exp(CIs), 4)
+
+# adults.pred <- adults[adults$ASTHMA==1 & adults$CIG100==1 & adults$RACETHN==3 & adults$HAYFEVER==0 & adults$TOT_ALQ ==30 & adults$AGE==40, ]
+
+adults.pred <- data.frame(AGE=40, ASTHMA=1, CIG100=1, RACETHN=3, HAYFEVER=0,TOT_ALQ =30 )
+
+# adults.pred <- data.frame(ASTHMA=rep(1,8360), CIG100=rep(1,8360), RACETHN=rep(3,8360), HAYFEVER=rep(0,8360) ,TOT_ALQ =rep(30,8360) )
+summary(adults.pred)
+predict(rmodel2, newdata=adults.pred, type="response")
 
 require(survey)
 data(api)
+
+
 
 
 dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
