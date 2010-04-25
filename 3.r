@@ -34,7 +34,7 @@ round(exp(CIs), 4)
 #scaled covariance matrix
 rmodel2.cov <- summary(rmodel2)$cov.scaled
 # Vector that specifies an asthmatic, mexian american, without hayfever, has 30 drinks a month and is 40 years old.
-char <- c(1,1,0,1,0,0,30,40)
+char <- c(0,1,0,1,0,0,30,40)
 odds.char <- round(exp(sum(betas*char)),4)
 
 SE.char <- sqrt(char%*%rmodel2.cov%*%char)
