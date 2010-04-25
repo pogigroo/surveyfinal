@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Examples/homework11.5.R(Hint1).r</string>
+	<string>3.r</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -14,7 +14,7 @@
 			<key>filename</key>
 			<string>dataheadings.txt</string>
 			<key>lastUsed</key>
-			<date>2010-04-24T21:34:15Z</date>
+			<date>2010-04-25T15:49:55Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -40,7 +40,7 @@
 			<key>filename</key>
 			<string>3.r</string>
 			<key>lastUsed</key>
-			<date>2010-04-24T21:32:16Z</date>
+			<date>2010-04-25T17:58:35Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
@@ -52,9 +52,39 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>37</integer>
+				<integer>141</integer>
 				<key>line</key>
-				<integer>5</integer>
+				<integer>41</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>30</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>41</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>141</integer>
+				<key>line</key>
+				<integer>41</integer>
+			</dict>
+		</dict>
+		<key>Examples/DatasetAdults+R(example).r</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>25</integer>
+				<key>line</key>
+				<integer>17</integer>
 			</dict>
 			<key>columnSelection</key>
 			<false/>
@@ -65,45 +95,31 @@
 			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>19</integer>
 				<key>line</key>
-				<integer>5</integer>
+				<integer>17</integer>
 			</dict>
 			<key>selectTo</key>
 			<dict>
 				<key>column</key>
-				<integer>37</integer>
+				<integer>25</integer>
 				<key>line</key>
-				<integer>5</integer>
+				<integer>17</integer>
 			</dict>
-		</dict>
-		<key>Examples/DatasetAdults+R(example).r</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>84</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>52</integer>
 		</dict>
 		<key>Examples/homework11.5.R(Hint1).r</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>15</integer>
+				<integer>1</integer>
 				<key>line</key>
-				<integer>63</integer>
+				<integer>106</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>56</integer>
+			<integer>73</integer>
 		</dict>
 		<key>Examples/homework11.5sudaan.R(Hint1).r</key>
 		<dict>
@@ -124,27 +140,43 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>19</integer>
+				<integer>7</integer>
 				<key>line</key>
-				<integer>12</integer>
+				<integer>6</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>4</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>7</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>3.r</string>
-		<string>dataheadings.txt</string>
-		<string>Examples/DatasetAdults+R(example).r</string>
 		<string>Examples/homework11.5.R(Hint1).r</string>
+		<string>Examples/DatasetAdults+R(example).r</string>
+		<string>dataheadings.txt</string>
 		<string>Examples/homework11.5sudaan.R(Hint1).r</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{132, 39}, {658, 739}}</string>
+	<string>{{37, 39}, {658, 739}}</string>
 </dict>
 </plist>
