@@ -12,20 +12,23 @@ adults$HAYFEVER <- abs(adults$HAYFEVER-2)
 # head(adults$PSU)
 # race = RACETHN
 
-adults.dsgn <- svydesign(ids = ~PSU, strata = ~STRATUM, 
+adults.dsgn <- svydesign(ids = ~PSU, strata = ~STRATUM, weights = ~EXAMWGT,
                          data = adults, 
                          nest=T)
 adults.JKn <- as.svrepdesign(adults.dsgn, type="JKn")
 
 rmodel2 <- svyglm(CIG100 ~ ASTHMA + as.factor(RACETHN) + HAYFEVER +TOT_ALQ + AGE,family = binomial, design=adults.JKn)
 # [part a] 
+# plot(rmodel2$y,rmodel2$fitted.values)
 summary(rmodel2)
+# plot(rmodel2)
+
 
 # [part b] 
 betas <- summary(rmodel2)$coefficients[,1]
 SE.betas <- summary(rmodel2)$coefficients[,2] 
-CIs <- round(
-	cbind(betas - qt(p = 0.975, df = adults.JKn$degf)*SE.betas, betas, betas + qt(p = 0.975, df = adults.JKn$degf)*SE.betas), 4)
+adults.JKn$degf
+CIs <- round(cbind(betas - qt(p = 0.975, df = adults.JKn$degf)*SE.betas, betas, betas + qt(p = 0.975, df = adults.JKn$degf)*SE.betas), 4)
 # get odds ratio for asthmatics from this table
 dimnames(CIs)[[2]] <- c("Lower", "Beta", "Upper") # Odds ratios and CIs
 round(exp(CIs), 4)
